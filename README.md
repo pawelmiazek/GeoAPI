@@ -20,9 +20,9 @@ The reason of chosen technology is that they have good community support and off
 
 1. Create your own version of `env.dev` by simply copying contents of `env.dev.example`.
 
-2. In root directory run `docker-compose -f docker-compose.dev.yml up -d` to build the app.
+2. In root directory run `docker-compose -f docker-compose.yml up -d` to build the app.
 
-3. After build run `docker-compose -f docker-compose.dev.yml exec web python manage.py migrate --no-input` to add migrations into database.
+3. After build run `docker-compose -f docker-compose.yml exec web python manage.py migrate --no-input` to add migrations into database.
 
 ## Production Setup
 

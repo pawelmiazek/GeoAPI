@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import GeoLocation
 import requests
 import re
+from django.contrib.auth.models import User
 
 
 class GeoLocationSerializer(serializers.ModelSerializer):
@@ -49,3 +50,12 @@ class GeoLocationSerializer(serializers.ModelSerializer):
                 return self.instance.save()
             else:
                 return GeoLocation.objects.create(**create_data)
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'password')
+    
+    def create(self, validated_data):
+        return User.objects.create_user(**validated_data)
